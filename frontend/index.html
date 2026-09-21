@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFix — AI Hardware Repair & Diagnostics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Navigation Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <h2>🌱 EcoFix</h2>
+      </div>
+      <nav class="nav-menu">
+        <button type="button" class="nav-btn active" data-tab="diagnostic-tab">🔍 AI Diagnostic</button>
+        <button type="button" class="nav-btn" data-tab="assessments-tab">📋 My Assessments</button>
+        <button type="button" class="nav-btn" data-tab="sustainability-tab">📊 Sustainability Score</button>
+        <button type="button" class="nav-btn" data-tab="showrooms-tab">📍 Find Showrooms</button>
+        <button type="button" class="nav-btn" data-tab="ewaste-tab">♻️ E-Waste Guide</button>
+        <button type="button" class="nav-btn" data-tab="settings-tab">⚙️ Settings</button>
+      </nav>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      
+      <!-- 1. AI DIAGNOSTIC TAB -->
+      <section id="diagnostic-tab" class="tab-content active">
+        <header class="section-header">
+          <h1>AI Hardware Diagnostic Engine</h1>
+          <p>Upload a photo of your damaged hardware to generate a 5-R repair-vs-replace assessment.</p>
+        </header>
+
+        <form id="diagnosis-form" class="card">
+          <div class="form-group">
+            <label for="image-upload">Upload Hardware Photo</label>
+            <input type="file" id="image-upload" accept="image/*" required>
+          </div>
+
+          <div class="form-group">
+            <label for="fault-description">Describe the Issue (Optional)</label>
+            <textarea id="fault-description" rows="3" placeholder="e.g. Screen flickering, loose power port, water damage..."></textarea>
+          </div>
+
+          <button type="submit" id="submit-diagnose-btn" class="primary-btn">Run AI Diagnosis</button>
+        </form>
+
+        <div id="results-container" class="card" style="display: none; margin-top: 20px;"></div>
+      </section>
+
+      <!-- 2. MY ASSESSMENTS TAB -->
+      <section id="assessments-tab" class="tab-content" style="display: none;">
+        <header class="section-header">
+          <h1>Assessment History</h1>
+          <p>Recent hardware diagnostic logs and saved reports.</p>
+        </header>
+        <div id="history-list" class="card">
+          <p>Loading assessment history...</p>
+        </div>
+      </section>
+
+      <!-- 3. SUSTAINABILITY SCORE TAB -->
+      <section id="sustainability-tab" class="tab-content" style="display: none;">
+        <header class="section-header">
+          <h1>Sustainability Dashboard</h1>
+          <p>Your aggregate metrics on saved money, prevented carbon footprint, and diverted e-waste.</p>
+        </header>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <h3>Total Savings</h3>
+            <p id="stat-money">₹0</p>
+          </div>
+          <div class="metric-card">
+            <h3>Carbon Prevented</h3>
+            <p id="stat-carbon">0.0 kg CO2e</p>
+          </div>
+          <div class="metric-card">
+            <h3>E-Waste Diverted</h3>
+            <p id="stat-ewaste">0.0 kg</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. FIND SHOWROOMS TAB -->
+      <section id="showrooms-tab" class="tab-content" style="display: none;">
+        <header class="section-header">
+          <h1>Nearby Verified Repair Centers</h1>
+          <p>Grant location permission to discover real repair shops in your neighborhood via OpenStreetMap.</p>
+        </header>
+        <button type="button" id="get-location-btn" class="secondary-btn" style="margin-bottom: 15px;">Detect Location & Search</button>
+        <div id="showrooms-container">
+          <p>Click the button above to discover local service centers.</p>
+        </div>
+      </section>
+
+      <!-- 5. E-WASTE GUIDE TAB -->
+      <section id="ewaste-tab" class="tab-content" style="display: none;">
+        <header class="section-header">
+          <h1>5-R E-Waste Disposal Guide</h1>
+        </header>
+        <div class="card">
+          <h3>The 5-R Framework</h3>
+          <ul>
+            <li><strong>Reduce:</strong> Buy durable hardware with modular components.</li>
+            <li><strong>Repair:</strong> Replace damaged sub-assemblies before abandoning whole units.</li>
+            <li><strong>Reuse:</strong> Repurpose outdated components for home automation or secondary tasks.</li>
+            <li><strong>Resell:</strong> Sell functional scrap boards to local hobbyists or refurbishers.</li>
+            <li><strong>Recycle:</strong> Drop unfixable logic boards at verified e-waste collection bins.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 6. SETTINGS TAB -->
+      <section id="settings-tab" class="tab-content" style="display: none;">
+        <header class="section-header">
+          <h1>Settings & Preferences</h1>
+        </header>
+        <div class="card">
+          <p><strong>Server Host:</strong> FastAPI Unified Server</p>
+          <p><strong>Geolocation Provider:</strong> OpenStreetMap (Overpass API)</p>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

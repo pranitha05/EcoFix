@@ -1,0 +1,33 @@
+# Environment variables & secrets (CRITICAL)
+.env
+.env.*
+!.env.example
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Python Cache & Compiled Files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Local SQLite Database
+*.db
+*.sqlite3
+
+# macOS System Files
+.DS_Store
+.AppleDouble
+.lsTrashed
+
+# IDE & Editor Settings
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
